@@ -106,8 +106,7 @@ int main() {
     dfs(laberinto, 0, 0);
 
     fin = clock();
-    tiempo = (double)(fin-inicio) /
-    CLOCKS_PER_SEC;
+    tiempo = (double)(fin-inicio) / CLOCKS_PER_SEC;
 
     printf("Camino encontrado por DFS:\n");
     mostrarLaberinto(laberinto);
@@ -121,3 +120,4 @@ int main() {
 
     return 0;
 }
+
