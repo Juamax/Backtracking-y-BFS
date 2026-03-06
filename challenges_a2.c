@@ -95,15 +95,24 @@ int main() {
         if (laberinto[rf][rc] == '#')
             laberinto[rf][rc] = '*';
     }
+    clock_t inicio, fin;
+    double tiempo;
 
     printf("\nLaberinto generado:\n");
     mostrarLaberinto(laberinto);
 
+    inicio = clock();
+
     dfs(laberinto, 0, 0);
+
+    fin = clock();
+    tiempo = (double)(fin-inicio) /
+    CLOCKS_PER_SEC;
 
     printf("Camino encontrado por DFS:\n");
     mostrarLaberinto(laberinto);
 
+    printf("Tiempo que tardo en encontrar el camino: %f segundos\n", tiempo);
     /* Liberar memoria */
     for (int i = 0; i < FILAS; i++) {
         free(laberinto[i]);
